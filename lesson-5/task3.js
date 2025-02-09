@@ -11,20 +11,21 @@ const number = 10;
 
 
 // for (let i = 1; i < 11; i++) {
-//     console.log(number + " x " + i + " = " + number*i)
+//     console.log(number + " x " + i + " = " + number*i);
+//     console.log(`${number} x ${i} = ${number * i}`);
 //   }
 
 
 
 i = 0;
 while (i < 11){
-    console.log(number + " x " + i + " = " + number*i);
+    console.log(`${number} x ${i} = ${number * i}`);
     i++;
 }
 
 
 // i = 0;
 // do {
-//     console.log(number + " x " + i + " = " + number*i);
+//     console.log(`${number} x ${i} = ${number * i}`);
 //     i++;
 // } while (i > 0 && i <=10)
