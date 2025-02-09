@@ -21,3 +21,10 @@ while (i < 11){
     console.log(number + " x " + i + " = " + number*i);
     i++;
 }
+
+
+// i = 0;
+// do {
+//     console.log(number + " x " + i + " = " + number*i);
+//     i++;
+// } while (i > 0 && i <=10)
