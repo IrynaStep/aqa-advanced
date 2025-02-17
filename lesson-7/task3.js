@@ -19,13 +19,36 @@ function divide (numerator, denominator){
         } else return numerator / denominator;
     }
     
-console.log(divide(30, "q"));
+// console.log(divide(30, "q"));
 
-console.log(divide(30, 7));
+// console.log(divide(30, 7));
 
-console.log(divide(30, 0));
+// console.log(divide(30, 0));
+
+try {
+    console.log(divide(30, 0)); // "Division by zero is not allowed"
+  } catch (e) {
+    console.log(e);
+  } finally {
+    console.log('default output');
+  }
 
 
+try {
+    console.log(divide(30, 7));
+  } catch (e) {
+    console.log(e); // All fine!
+  } finally {
+    console.log('default output');
+  }  
 
+
+try {
+    console.log(divide(30, "q"));
+  } catch (e) {
+    console.log(e); // "Both arguments must be numbers"
+  } finally {
+    console.log('default output');
+  }  
 
 
