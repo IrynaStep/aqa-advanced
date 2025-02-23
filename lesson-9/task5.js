@@ -11,5 +11,5 @@ const users = [
   ];
 
   for (const person of users) {
-    console.log(`${person.name} is ${person.age} years, text him/her by email ${person.email}`);
+    console.log(`${person.name} is ${person.age} years, contact him/her by email ${person.email}`);
   }
