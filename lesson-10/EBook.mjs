@@ -5,25 +5,49 @@
 // (все те саме що і для Book але ще формат файлу). Створіть інстанс (екземпляр) класу EBook та 
 // викличте метод printInfo
 
-import { Book } from "./Book.mjs"; 
+import { Book1, Book2, Book3 } from "./Book.mjs"; 
 
-class EBook extends Book {
+export class EBook extends Book {
 constructor (name, author, year, file_format){
     super(name, author, year);
     this.file_format = file_format;
 }
-printInfo(){
-    console.log(`Book ${this.name} written by ${this.author} published in ${this.year} year in ${this.file_format} format`);
+set file_format(value){
+    if(!value){
+        console.log("The format cannot be empty!");
+        return;
+    }
+    this.file_format = value;
 }
+
+
+printInfo(){
+    console.log(`EBook ${this.name} written by ${this.author} published in ${this.year} year in ${this.file_format} format`);
+}
+
+static fromBook(bookInstance, file_format) {
+    const newEBook = new EBook(bookInstance.name, bookInstance.author, bookInstance.year, file_format);
+    return newEBook;
+}
+
 }
 
 const EBook1 = new EBook("Death in the Dark", "Agatha Christi", 1983, "pdf");
 const EBook2 = new EBook("Death Day", "Horrible Author", 1953, "txt");
 const EBook3 = new EBook("Hour of joy (poppy playtime)", "Ur Mom", 2013, "jpg");
+const EBook4 = new EBook("Old School", "Ancient Writer", 1800, "txt");
+
+const allBooks = [Book1, Book2, Book3, EBook1, EBook2, EBook3, EBook4];
+
+const oldestBook = Book.findOldestBook(allBooks);
+console.log("Oldest book:");
+oldestBook.printInfo();
+
 
 EBook1.printInfo();
 EBook2.printInfo();
 EBook3.printInfo();
+EBook4.printInfo();
 
 
 
